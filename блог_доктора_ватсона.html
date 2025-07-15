@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr Watson's Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hidden-content {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6">
+
+  <!-- Header -->
+  <header class="text-center mb-10">
+    <h1 class="text-4xl md:text-6xl font-bold mb-2">Dr John Watson's Blog</h1>
+    <p class="text-lg text-gray-400">Chronicles of Sherlock Holmes' Cases</p>
+    <div class="mt-4 text-gray-400">🔔 Subscribers: <span id="subscriberCount">221</span>B</div>
+  </header>
+
+  <!-- Image -->
+  <div class="flex justify-center mb-8">
+    <img src="https://i.pinimg.com/originals/f9/88/46/f9884606bb119a1561654b8c4b728cb0.jpg" alt="Sherlock and Watson" class="rounded-2xl shadow-lg w-full max-w-3xl hover:scale-105 transition-transform duration-300" />
+  </div>
+
+  <!-- Blog Posts -->
+  <section class="space-y-12 max-w-3xl mx-auto fade-in">
+    <article class="bg-gray-800 rounded-xl p-6 shadow-lg hover:bg-gray-700 transition-colors duration-300">
+      <h2 class="text-2xl font-bold mb-2 cursor-pointer" onclick="toggleDetails('case1')">☕ A Scandal in Belgravia</h2>
+      <p class="text-gray-300">It all began with a visit from a most distinguished client. <span id="case1" class="hidden-content">Irene Adler herself, the woman who outsmarted Sherlock Holmes, was at the centre of it all. I've never seen him so... unsettled.</span></p>
+      <div class="mt-4 flex items-center gap-4">
+        <button onclick="like(this)" class="text-green-400 hover:text-green-300">👍 <span>12</span></button>
+        <button onclick="dislike(this)" class="text-red-400 hover:text-red-300">👎 <span>1</span></button>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-gray-300 font-bold mb-1">Comments:</h3>
+        <ul class="text-sm text-gray-400 space-y-1">
+          <li>— Mrs Hudson: “That was thrilling!”</li>
+          <li>— Lestrade: “You interfered again, Holmes!”</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="bg-gray-800 rounded-xl p-6 shadow-lg hover:bg-gray-700 transition-colors duration-300">
+      <h2 class="text-2xl font-bold mb-2 cursor-pointer" onclick="toggleDetails('case2')">🧨 The Hound of the Baskervilles</h2>
+      <p class="text-gray-300">We travelled to Devonshire. <span id="case2" class="hidden-content">The hound from hell turned out to be something far more real — and far more dangerous. Holmes acted strangely... almost afraid.</span></p>
+      <div class="mt-4 flex items-center gap-4">
+        <button onclick="like(this)" class="text-green-400 hover:text-green-300">👍 <span>20</span></button>
+        <button onclick="dislike(this)" class="text-red-400 hover:text-red-300">👎 <span>0</span></button>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-gray-300 font-bold mb-1">Comments:</h3>
+        <ul class="text-sm text-gray-400 space-y-1">
+          <li>— Henry: “That nearly cost me my life!”</li>
+          <li>— Holmes: “Details matter, Watson.”</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="bg-gray-800 rounded-xl p-6 shadow-lg hover:bg-gray-700 transition-colors duration-300">
+      <h2 class="text-2xl font-bold mb-2 cursor-pointer" onclick="toggleDetails('case3')">🧬 The Final Problem</h2>
+      <p class="text-gray-300">He's returned. <span id="case3" class="hidden-content">Jim Moriarty. We knew this was the endgame. Holmes was on edge — and so was I. A bridge, a gunshot... and then — the fall.</span></p>
+      <div class="mt-4 flex items-center gap-4">
+        <button onclick="like(this)" class="text-green-400 hover:text-green-300">👍 <span>31</span></button>
+        <button onclick="dislike(this)" class="text-red-400 hover:text-red-300">👎 <span>3</span></button>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-gray-300 font-bold mb-1">Comments:</h3>
+        <ul class="text-sm text-gray-400 space-y-1">
+          <li>— Molly: “You're alive... aren't you?”</li>
+          <li>— Mycroft: “It had to be done.”</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="max-w-3xl mx-auto mt-16 bg-gray-800 p-6 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-4">📞 Contact Information</h2>
+    <p class="text-gray-300 mb-2">If you have an intriguing case or enquiry — don't hesitate to get in touch.</p>
+    <ul class="text-gray-400 space-y-2">
+      <li><strong>Telephone:</strong> +44 20 7946 0958</li>
+      <li><strong>Email:</strong> dr.watson@221bbakerstreet.co.uk</li>
+      <li><strong>Address:</strong> 221B Baker Street, London</li>
+      <li><strong>Office hours:</strong> Mon–Fri, 9:00–18:00</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center mt-12 text-gray-500 text-sm">
+    &copy; 2025 Dr John Watson. All stories are real. Mostly.
+  </footer>
+
+  <!-- Interactive Script -->
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'inline') ? 'none' : 'inline';
+    }
+
+    function like(button) {
+      const span = button.querySelector('span');
+      span.textContent = parseInt(span.textContent) + 1;
+    }
+
+    function dislike(button) {
+      const span = button.querySelector('span');
+      span.textContent = parseInt(span.textContent) + 1;
+    }
+  </script>
+
+</body>
+</html>
